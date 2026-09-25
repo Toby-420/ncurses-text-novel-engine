@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     currentTime = time(NULL);
     tm = *localtime(&currentTime);
     append_to_log("Startup", true);
-    append_to_log("Logging set up", false);
+    append_to_log("Logging set up.", false);
 
     // ncurses setup
     initscr();

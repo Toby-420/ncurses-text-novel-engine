@@ -1,32 +1,28 @@
-NAME		:= cassave
+NAME		:= engine
 VERSION		?= dev
 
 CC		:= gcc
 FLAGS		:= -Wall
-LDFLAGS		:= -lncurses -lpanel -lmenu
+LDFLAGS		:= -lncurses
 
 
 BUILD		:= bin
 
-SRC_CLI		:= src/*
+SRC		:= src/*.c
 
-BIN_CLI		:= $(BUILD)/$(NAME)
+BIN		:= $(BUILD)/$(NAME)
 
 .PHONY: all
 
 #------------------------------------------------------------
-#default build only cli
 
-all: $(BIN)
-
-$(BIN): $(SRC) | $(BUILD)
-	$(CC) $(FLAGS) -o $@ $(SRC) $(LDFLAGS)
-	strip $@
+all: $(SRC) | $(BUILD)
+	$(CC) $(SRC) $(FLAGS) $(LDFLAGS) -o $(BIN)
+	strip $(BIN)
 
 $(BUILD):
 	mkdir -p $@
 
-#-------------------------------------------------------------
-#clean
+#------------------------------------------------------------
 clean:
 	rm -rf  $(BUILD)
