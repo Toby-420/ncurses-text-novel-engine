@@ -1,0 +1,15 @@
+Please take the time to read through this before starting to use the engine
+as it explains everything you need to know.
+
+Important notes:
+
+    This engine is designed to read a story. It is not designed as an RPG
+    engine. The story must be mostly linear, but can have branches. It is
+    recommended that the branches converge simply for ease of writing. As of
+    the current version, the engine cannot keep track of items or character
+    state, but it is possible to do this within the story using branches.
+
+What things you need to think about:
+
+    story/ - this directory contains all story files and therefore the vast
+             majority of the game.
