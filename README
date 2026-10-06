@@ -4,7 +4,7 @@ as it explains everything you need to know.
 Important notes:
 
     Do not supply this with a build of the game for normal users.
-    Supply just README-USER instead to avoid confusion.
+    Supply just README in the bin directory instead to avoid confusion.
 
     This engine is designed to read a story. It is not designed as an RPG
     engine. The story must be mostly linear, but can have branches. It is
