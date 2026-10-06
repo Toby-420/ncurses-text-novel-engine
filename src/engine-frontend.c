@@ -105,8 +105,8 @@ int main(int argc, char *argv[])
         echo();
         curs_set(1);
         append_to_log("Shutdown", true);
-        fclose(logFile);
-        fclose(MasterStory.storyFile);
+        if (logFile != NULL) fclose(logFile);
+        if (MasterStory.storyFile != NULL) fclose(MasterStory.storyFile);
 
     return 0;
 }
