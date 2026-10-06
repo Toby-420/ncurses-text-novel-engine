@@ -3,6 +3,9 @@ as it explains everything you need to know.
 
 Important notes:
 
+    Do not supply this with a build of the game for normal users.
+    Supply just README-USER instead to avoid confusion.
+
     This engine is designed to read a story. It is not designed as an RPG
     engine. The story must be mostly linear, but can have branches. It is
     recommended that the branches converge simply for ease of writing. As of
@@ -13,3 +16,21 @@ What things you need to think about:
 
     story/ - this directory contains all story files and therefore the vast
              majority of the game.
+
+
+What goes in story files?
+
+The first line MUST be in the format of game-name,author,version.
+For example, if Alice wrote version v3 of 'Hero Slayer', the first line
+    would be Hero Slayer,Alice,v3
+Note that spaces are allowed. Commas are not allowed except as delimiters
+
+Every line after the first can be any one of the following:
+
+Dialogue -  Just write the dialogue as you want it. No characters are handled
+            by the engine, so you'll have to add those if you want.
+
+Comments -  Preface a line with # and it'll be a comment.
+
+End Game -  Preface the line with ! and the game ends there. Anything after
+            that (including on the same line) is ignored.

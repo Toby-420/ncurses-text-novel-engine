@@ -31,6 +31,10 @@
 
 #define MASTER_STORY_PATH "story/master.sty"
 
+enum SCREENS {
+    HELP_SCREEN = 0,
+};
+
 typedef struct
 {
     FILE *storyFile;

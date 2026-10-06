@@ -57,10 +57,36 @@ int main(int argc, char *argv[])
     printw("%s by %s. Version %s.\n", Game.title, Game.author, Game.version);
     printw("Press any key to start.\n");
     getch();
+    clear();
 
     // TODO: read in lines incrementally and use that to check whether to
     // write dialogue as a character, ignored as a comment, branch to other
     // place, or some other logic.
+
+    int ch = 0;
+    while (true)
+    {
+        switch (ch)
+        {
+            case KEY_F(1):
+                showScreen(HELP_SCREEN);
+            case KEY_F(10):
+                printw("Hit enter to exit game...\n");
+                break;
+            default:
+                loadLine();
+                if (MasterStory.lineContents[0] == '!')
+                {
+                    printw("Game End.\nHit enter to close.\n");
+                    getch();
+                    goto SHUTDOWN_SEQUENCE;
+                }
+                printw("%s\n", MasterStory.lineContents);
+                ch = getch();
+
+        }
+
+    }
 
 
     // tear down ncurses
