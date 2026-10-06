@@ -46,14 +46,10 @@ bool loadGameData(void)
 
 int loadLine(void)
 {
-    MasterStory.lineContents[0] = '#';
-    while (MasterStory.lineContents[0] == '#')
-    {
-        if (getline(&MasterStory.lineContents, &MasterStory.lineLength,
-            MasterStory.storyFile) == -1) return false;
+    if (getline(&MasterStory.lineContents, &MasterStory.lineLength,
+        MasterStory.storyFile) == -1) return false;
 
-        MasterStory.lineContents[strcspn(MasterStory.lineContents, "\n")] = '\0';
-    }
+    MasterStory.lineContents[strcspn(MasterStory.lineContents, "\n")] = '\0';
 
     return true;
 }

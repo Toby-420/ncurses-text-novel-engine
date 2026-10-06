@@ -70,21 +70,31 @@ int main(int argc, char *argv[])
         {
             case KEY_F(1):
                 showScreen(HELP_SCREEN);
+                break;
             case KEY_F(10):
                 printw("Hit enter to exit game...\n");
+                getch();
+                goto SHUTDOWN_SEQUENCE;
                 break;
             default:
-                loadLine();
-                if (MasterStory.lineContents[0] == '!')
-                {
-                    printw("Game End.\nHit enter to close.\n");
-                    getch();
-                    goto SHUTDOWN_SEQUENCE;
-                }
+                break;
+        }
+        loadLine();
+        switch (MasterStory.lineContents[0])
+        {
+            case '!':
+                printw("Game End.\nHit enter to close.\n");
+                getch();
+                goto SHUTDOWN_SEQUENCE;
+                break;
+            case '#':
+                break;
+            default:
                 printw("%s\n", MasterStory.lineContents);
                 ch = getch();
-
+                break;
         }
+
 
     }
 
