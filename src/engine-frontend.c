@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
         append_to_log("Master story loaded.", false);
     }
 
+    // load data from line 1 of master story file
     if (!loadGameData())
     {
         append_to_log("Could not read game data from master story file.",
@@ -66,6 +67,7 @@ int main(int argc, char *argv[])
     int ch = 0;
     while (true)
     {
+        // decide what to do depending on keypress
         switch (ch)
         {
             case KEY_F(1):
@@ -79,7 +81,10 @@ int main(int argc, char *argv[])
             default:
                 break;
         }
+
         loadLine();
+
+        // Decide what to do depending on first char of master story line
         switch (MasterStory.lineContents[0])
         {
             case '!':
@@ -89,15 +94,15 @@ int main(int argc, char *argv[])
                 break;
             case '#':
                 break;
+            case '%':
+                clear();
+                break;
             default:
                 printw("%s\n", MasterStory.lineContents);
                 ch = getch();
                 break;
         }
-
-
     }
-
 
     // tear down ncurses
     SHUTDOWN_SEQUENCE:

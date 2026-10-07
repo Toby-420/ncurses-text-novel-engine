@@ -60,8 +60,23 @@ bool showScreen(int screenToShow)
     {
         case HELP_SCREEN:
             clear();
-            printw("Help screen will be shown here.\n");
+/*
+            FILE *helpFile = fopen(HELP_FILE_PATH, "r");
+            if (helpFile == NULL) return false;
+            char *helpContents;
+            size_t helpLineLength;
+
+            while (getline(&helpContents, &helpLineLength, helpFile) != -1)
+            {
+                printw("%s", helpContents);
+            }
+
+            fclose(helpFile);*/
+
+            printw("here be segfault\n");
+
             getch();
+            clear();
             break;
         default:
             break;

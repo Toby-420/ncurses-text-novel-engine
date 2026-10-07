@@ -32,5 +32,7 @@ Dialogue -  Just write the dialogue as you want it. No characters are handled
 
 Comments -  Preface a line with # and it'll be a comment.
 
+Clearing -  Preface a line with % and the screen will clear.
+
 End Game -  Preface the line with ! and the game ends there. Anything after
             that (including on the same line) is ignored.

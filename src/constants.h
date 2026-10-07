@@ -30,6 +30,7 @@
 */
 
 #define MASTER_STORY_PATH "story/master.sty"
+#define HELP_FILE_PATH "data/help"
 
 enum SCREENS {
     HELP_SCREEN = 0,
